@@ -2,14 +2,16 @@
 //Database credentials
 
 // syntax for creating a constant variable in php
-    define('SERVERNAME','localhost');
-    define('HOSTNAME','root');
-    define('PASSWORD','');
-    define('DATABASE','Demand');
+    // define('SERVERNAME','localhost');
+    // define('HOSTNAME','root');
+    // define('PASSWORD','');
+    // define('DATABASE','Demand');
 
 
-    // define('SERVERNAME','us-cdbr-east-06.cleardb.net');
-    // define('HOSTNAME','b345c0e5c925f0');
-    // define('PASSWORD','3a6ff711');
-    // define('DATABASE','heroku_54c070a3bc39030');
+    define('SERVERNAME','us-cdbr-east-06.cleardb.net');
+    define('HOSTNAME','b6b9b9788c6020');
+    define('PASSWORD','e933333c');
+    define('DATABASE','heroku_4a0abfbfc157f56');
 ?>
+
+
