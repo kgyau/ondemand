@@ -21,7 +21,7 @@ $cat_id;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="colorlib.com">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
-    <link href="../css/search.css" rel="stylesheet" />
+    <link href="../css/search.css" rel="stylesheet"/>
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
