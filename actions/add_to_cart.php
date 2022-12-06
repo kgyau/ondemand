@@ -2,6 +2,7 @@
 
 include ("../settings/core.php");
 require("../controllers/cart_controller.php");
+$_SESSION["alreadycart"] = "error";
 
  if (isset($_GET['product_id'])) {
     //product id
@@ -16,7 +17,7 @@ require("../controllers/cart_controller.php");
 
      if($checkduplicate!=""){ 
 
-      $_SESSION["alreadycart"] = "error";
+      // $_SESSION["alreadycart"] = "error";
       header("location:../view/product.php");
 
             

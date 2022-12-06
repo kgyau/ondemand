@@ -3,13 +3,15 @@
   include ("../settings/core.php");
   require("../controllers/cart_controller.php");
   $url = "https://api.paystack.co/transaction/initialize";
-  $email = $_POST['email'];
-  // $amt = $_POST['amt'];
-  $amt =$_POST['amount'];
+  get_id();
+  $email = $_GET['email'];
+  // $amt = $_GET['amt'];
+  $amt =$_GET['amount'];
   // $amt=select_one_price_ctr($amt);
-  $qty =$_POST['prod_quantity'];
-  $c_id =$_POST['customerid'];
-  $prod_id=$_POST['prod_id'];
+  $qty =$_GET['p_qty'];
+  $c_id =get_id();
+ $prod_id=$_GET['prod_id'];
+
 
   $cartitems = viewcart_ctr($c_id);
 
@@ -54,11 +56,12 @@
   $order_id=$order_id['order_id'];
   $currency= 'GHS';
   $payment= payment_ctr($amt,$customer_id,$order_id,$currency,$payment_date);
-
-
-  
     
   // echo"<br>amount$amt,cus$customer_id,ord$order_id,curr$currency,pay$payment_date";
+
+  $delete = removefromcart_ctr($c_id);
+
+
 
   $i=0;
 
@@ -69,25 +72,45 @@
     $i++;
   }
     
+
+
+
   
   $_SESSION["success_message"] = "success";
 
-  header('location: ../view/payment_success.php');
+
+  // header('location: ../view/payment_success.php');
 } 
+// $payment= payment_ctr($amt,$customer_id,$order_id,$currency,$payment_date);
+
+// if ($payment) {
+//   // if payment is successful remove the customers products from the cart
+ 
+// }
+
+
+//  // check if insertion was successful
+//  if ($delete) {
+//   header('location: ../view/payment_success.php');
+// } else {
+//   header('Location: ../views/failure.html');
+
+// }
 
 
 
 
 // session variuable check if it equal to success if so do the js
+// <!-- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+//       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+//       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+// <script>
+  
+
+//   document.location.href="../view/payment_success.php";
+  
+// </script>
+//  -->
 
 ?>
-<!-- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>-->
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-  
-
-  document.location.href="../view/payment_success.php";
-  
-</script>
 

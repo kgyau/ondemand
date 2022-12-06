@@ -10,8 +10,8 @@ class Cart extends db_connection{
 		return $this-> db_query($sql);
     }
 
-    function removefromcart_cls($p_id,$c_id){
-        $sql="DELETE FROM cart WHERE `p_id`='$p_id' AND `c_id`='$c_id'";
+    function removefromcart_cls($c_id){
+        $sql="DELETE FROM cart WHERE `c_id`='$c_id'";
 		return $this-> db_query($sql);
     }
   
@@ -19,6 +19,15 @@ class Cart extends db_connection{
 		$sql = "SELECT products.product_id, products.product_title,products.product_price, products.product_image, products.product_price, cart.qty, cart.c_id from cart inner join products on cart.p_id=products.product_id where c_id=$c_id;";
 		return $this-> db_fetch_all($sql);
 	}
+
+
+    function delete_all_from_cart_cls($c_id){
+		// return true or false
+        $sql= "DELETE from cart WHERE `c_id` ='$c_id'";
+        return $this->db_query($sql);
+       
+	}
+
 
     //check for duplicate
     function duplicatecheck_cls($p_id,$c_id){

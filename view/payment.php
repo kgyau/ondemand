@@ -260,12 +260,13 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
     },callback: function(response){  
         // let message = 'Payment complete! Reference: ' + response.reference;  alert(message);
         $.ajax({
-      	url: '../actions/payment_process.php?reference='+ response.reference+'&email='+one+'&amount='+two+'&c_id',
+      	url: '../actions/payment_process.php?reference='+ response.reference+'&email='+document.getElementById("email").value+'&amount='+document.getElementById("amt").value+'&c_id='+document.getElementById("c_id").value+'&p_qty='+
+          document.getElementById("p_qty").value+'&prod_id='+document.getElementById("prod_id").value,
       	method: 'get',
-      	success: function (response) {
+      	success: function () {
       // the transaction status is in response.data.status
-      alert(response);
-    //    window.location = "../view/payment_success.php";
+    //   alert(response);
+       window.location = "../view/payment_success.php";
     //    return false;
 
     //    document.location.href="../view/payment_success.php";

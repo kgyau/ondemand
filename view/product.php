@@ -4,8 +4,9 @@ session_start();
 if((empty($_SESSION['cid']))){ //if login in session is not set
     header("Location: ../error/404.php");
 }
+// $_SESSION["alreadycart"] = "error";
 
-$_SESSION["alreadycart"] = "error";
+
 
 ?>
 
@@ -164,7 +165,7 @@ $_SESSION["alreadycart"] = "error";
                                 </div>							
                                 <div class='text-center p-4'>
                                 <a class='d-block h5 mb-2'>$product_title</a>
-                                <span class='text-primary me-1'>GHS$pprice</span>
+                                <span class='text-primary me-1'>$$pprice</span>
                                 </div>
                                 <div class='d-flex border-top'>
                                 <small class='w-50 text-center border-end py-2'>
@@ -261,7 +262,6 @@ $_SESSION["alreadycart"] = "error";
 
 <?php
 if($_SESSION["alreadycart"] == "error"){
-
 ?>
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -274,14 +274,14 @@ Swal.fire({
     timer: 4000,
 });
 
+
 </script>
 
 
 
 <?php
-
+unset($_SESSION["alreadycart"]);
 }
-
 ?>
 
 

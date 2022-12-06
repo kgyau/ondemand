@@ -18,6 +18,12 @@ include("../classes/cart_class.php");
         return $add_item->addtocart_cls($p_id,$ip_add,$c_id,$qty);
     }
 
+    function delete_all_from_cart_ctr($c_id){
+        $delall=new Cart();
+        return $delall-> delete_all_from_cart_cls($c_id);
+
+    }
+
    
     function viewcart_ctr($c_id){
         $view= new Cart();
@@ -28,9 +34,9 @@ include("../classes/cart_class.php");
     //     return $qty->cartqty_cls();
     // }
 
-    function removefromcart_ctr($p_id,$c_id){
+    function removefromcart_ctr($c_id){
         $remove= new Cart();
-        return $remove->removefromcart_cls($p_id,$c_id);
+        return $remove->removefromcart_cls($c_id);
     }
 
     function  duplicatecheck_ctr($p_id,$c_id){
