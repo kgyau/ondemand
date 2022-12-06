@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     // $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
     $city = $_POST['city'];
     $contactnumber = $_POST['contactnumber'];
-    $userrole = 1;
+    $userrole = 2;
 
     // echo $fullname,$email,$password,$country, $city ,$contactnumber,$userrole;
 
