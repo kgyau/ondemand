@@ -26,6 +26,8 @@ $mail->Subject = $_POST["subject"];
 $mail->Body = $_POST["message"];
 $mail->send();
 
+  echo "success";
+
 
 }
 
