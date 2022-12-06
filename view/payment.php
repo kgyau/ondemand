@@ -71,37 +71,58 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
     </head>
 
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-        <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.9s">
-            <a href="../index.php" class="navbar-brand ms-4 ms-lg-0">
-                <h1 class="fw-bold text-primary m-0">F<span class="text-secondary">oo</span>dy</h1>
+  
+<!-- Navbar Start -->
+<div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+
+
+<nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+    <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+        <h1 class="fw-bold text-primary m-0">ON<span class="text-secondary">Demand</span></h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="../index.php" class="nav-item nav-link active">Home</a>
+            <a href="../view/product.php" class="nav-item nav-link"> Products</a>
+            <a href="../view/contact.php" class="nav-item nav-link">Contact us</a>
+            <?php
+            // session_start();
+            if(isset($_SESSION['cid'])){
+        ?>
+        <a class="nav-item nav-link" style="align-self: right;" href="login/logout.php">Logout</a>
+        <?php
+            }
+        ?>
+
+        </div>
+
+        <div class="d-none d-lg-flex ms-2">
+        <?php
+            if(isset($_SESSION['cid'])){
+        ?>
+        <a class="btn-sm-square bg-white rounded-circle ms-3" href="../view/product_search_result.php">
+                <small class="fa fa-search text-body"></small>
             </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="../index.php" class="nav-item nav-link">Home</a>
-                    <a href="product.php" class="nav-item nav-link active">Products</a>
-                    <a href="contact.php" class="nav-item nav-link">Contact Us</a>
-                </div>
-                <div class="d-none d-lg-flex ms-2">
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="product_search_result.php">
-                        <small class="fa fa-search text-body"></small>
-                    </a>
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
-                        <small class="fa fa-user text-body"></small>
-                    </a>
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="cart.php">
-                        <small class="fa fa-shopping-bag text-body"></small>
-                    </a>
-                </div>
-            </div>
-        </nav>
+            <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
+                <small class="fa fa-user text-body"></small>
+            </a>
+            
+            <a class="btn-sm-square bg-white rounded-circle ms-3" href="../view/cart.php">
+                <small class="fa fa-shopping-bag text-body"></small>
+            </a>
+        <?php
+            }
+        ?>
+           
+        </div>
     </div>
-    <!-- Navbar End -->
+</nav>
+</div>
+<!-- Navbar End -->
 
      <!-- Page Header Start -->
      <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -156,7 +177,7 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
 
                                     <li class='list-group-item d-flex justify-content-between align-items-center px-0'>
                                     Price
-                                    <span>$product_price</span>
+                                    <span>GHS$product_price</span>
                                     </li>
 
                                     <li class='list-group-item d-flex justify-content-between align-items-center px-0'>
@@ -171,9 +192,20 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
                                                 <p class='mb-0'>(including VAT)</p>
                                             </strong>
                                         </div>
-                                        <span><strong>$itemtotal_price</strong></span>
+                                        <span><strong>GHS$itemtotal_price</strong></span>
 
                                     </li>
+                                    <li
+                                    class='list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3'>
+                                    <div>
+                                        <strong>Final Amount</strong>
+                                        <strong>
+                                            <p class='mb-0'></p>
+                                        </strong>
+                                    </div>
+                                    <span><strong>GHS$grandtotal1</strong></span>
+
+                                </li>
                                 </ul>
                                
                                </div>
@@ -181,11 +213,7 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
                                 }
                                 
                             ?>
-                            <?php
-                            echo"
-                                        <span><strong> Final total $grandtotal1</strong></span>";
-                                        ?>
-
+                          
 
                         <div class="card-footer">
 						<form action="../actions/payment_process.php" method="POST"> 
@@ -197,7 +225,7 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
 
 
 
-							<button class='btn btn-primary btn-lg btn-block' type="submit" name="pay_now" id="pay-now"  >Pay now</button>
+							<button class='btn btn-primary btn-lg btn-block' type="submit" name="pay_now"  onclick=payWithPaystack() id="pay-now"  >Pay now</button>
 						</form>
 					</div>
                 </div>
@@ -221,7 +249,7 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
     event.preventDefault();
 
     let handler = PaystackPop.setup({
-        key: 'pk_test_3465938a39c4933acbc7a282a169336b018a4c6e', // Replace with your public key
+        key: 'pk_test_0ecfee73d182a155d2d4c95e059fc6ab143a5554', // Replace with your public key
         email: document.getElementById("email").value,
         amount: document.getElementById("amt").value * 100,
         ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
@@ -232,12 +260,15 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
     },callback: function(response){  
         // let message = 'Payment complete! Reference: ' + response.reference;  alert(message);
         $.ajax({
-      	url: '../actions/payment_process.php?reference='+ response.reference+'&email='+one+'&amount='+two+'&c_id' ,
+      	url: '../actions/payment_process.php?reference='+ response.reference+'&email='+one+'&amount='+two+'&c_id',
       	method: 'get',
       	success: function (response) {
       // the transaction status is in response.data.status
       alert(response);
-       window.location = 'index.php';
+    //    window.location = "../view/payment_success.php";
+    //    return false;
+
+    //    document.location.href="../view/payment_success.php";
   }
 });
     }
@@ -250,43 +281,30 @@ handler.openIframe();
 
 </script> 
 
-
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark footer pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h1 class="fw-bold text-primary mb-4">F<span class="text-secondary">oo</span>dy</h1>
-                    <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
-                        stet lorem sit clita</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
-                                class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
-                    </div>
+                <h1 class="fw-bold text-primary m-0">ON<span class="text-secondary">Demand</span></h1>
+
+                    <p>Get all fish farming products Here! For a good fee</p>
+                   
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Mamprobi,Accra</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+2332028129432</p>
+                    <p><i class="fa fa-envelope me-3"></i>gifty.ofori-gyau@bov.gov.gh</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="../view/about.php">About Us</a>
+                    <a class="btn btn-link" href="../view/contact.php">Contact Us</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <p>Products available 24hours.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
                             placeholder="Your email">
@@ -300,11 +318,11 @@ handler.openIframe();
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                        &copy; <a href="../index.php">Ondemand</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                        <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a> -->
                     </div>
                 </div>
             </div>

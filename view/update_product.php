@@ -87,6 +87,11 @@ $product = viewoneprod_ctr($prod_id);
                             <label for="">Description</label><br>
                         </div>
 
+                        <div class="form-group">
+                            <input type="radio" name="rental" value="Rental">Rental <br>
+                            <input type="radio" name="rental" value="Non-Rental">Non-rental
+                        </div>
+
 
                         <div class="form-group">
                             <label for="">Image</label><br>

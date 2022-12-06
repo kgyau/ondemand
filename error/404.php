@@ -52,8 +52,7 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="../index.php" class="nav-item nav-link active">Home</a>
             <a href="../view/product.php" class="nav-item nav-link"> Products</a>
-            <a href="../view/contact.php" class="nav-item nav-link">Rentals</a>
-            <a href="../view/about.php" class="nav-item nav-link">About Us</a>
+            <a href="../view/contact.php" class="nav-item nav-link">Contact us</a>
             <?php
             session_start();
             if(isset($_SESSION['cid'])){

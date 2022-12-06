@@ -9,21 +9,25 @@ if(isset($_POST['Updatep'])){
    $productprice=$_POST['product_price'];
    $prod_desc=$_POST['product_desc'];
    $prod_key=$_POST['product_keywords'];
+   $rental=$_POST['rental'];
 
-   // $productimage=$_POST['prodimage'];
 
    $prodimage =$_FILES['prodimage']['name'];
-   $targetdir= "../images/product/";
+   $targetdir= "../images/products/";
    $image = $targetdir . $prodimage;
-   move_uploaded_file($_FILES["prodimage"]["tmp_name"],"../images/product/".$_FILES["prodimage"]["name"]);
+   $file = '../images/products/' .basename($_FILES["prodimage"]["name"]);
+
+   move_uploaded_file($_FILES["prodimage"]["tmp_name"],$file);
    
 
   
 
-   $result= editprod_ctr($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$productimage);
+   $result= editprod_ctr($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$prodimage,$rental);
+   echo "$prod_id id ,$productcat cat,$productbrand bran,$prod_title tit,$productprice prioc,$prod_desc des,$prod_key ke,$prodimage ima,$rental tip";
+
 
    if($result==True){
-    header("location:../view/all_product.php");
+    header("location:../admin/admin_product.php");
    }
 
    else{

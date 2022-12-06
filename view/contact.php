@@ -39,7 +39,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
         <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
-            <h1 class="fw-bold text-primary m-0">F<span class="text-secondary">oo</span>dy</h1>
+     <h1 class="fw-bold text-primary m-0">ON<span class="text-secondary">Demand</span></h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
             data-bs-target="#navbarCollapse">
@@ -49,13 +49,12 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="../index.php" class="nav-item nav-link active">Home</a>
                 <a href="../view/product.php" class="nav-item nav-link"> Products</a>
-                <a href="../view/contact.php" class="nav-item nav-link">contact</a>
                 <a href="../view/about.php" class="nav-item nav-link">About Us</a>
                 <?php
                 session_start();
                 if(isset($_SESSION['cid'])){
             ?>
-            <a class="nav-item nav-link" style="align-self: right;" href="login/logout.php">Logout</a>
+            <a class="nav-item nav-link" style="align-self: right;" href="../login/logout.php">Logout</a>
             <?php
                 }
             ?>
@@ -94,8 +93,7 @@
             <h1 class="display-3 mb-3 animated slideInDown">Contact Us</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a class="text-body" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-body" href="#">Pages</a></li>
+                    <li class="breadcrumb-item"><a class="text-body" href="../index.php">Home</a></li>
                     <li class="breadcrumb-item text-dark active" aria-current="page">Contact Us</li>
                 </ol>
             </nav>
@@ -108,7 +106,7 @@
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <h1 class="display-5 mb-3">Contact Us</h1>
-                <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                <p>For Further enquiries</p>
             </div>
             <div class="row g-5 justify-content-center">
                 <div class="col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="0.1s">
@@ -129,8 +127,7 @@
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                    <form>
+                 <form>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -178,39 +175,34 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark footer pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h1 class="fw-bold text-primary mb-4">F<span class="text-secondary">oo</span>dy</h1>
-                    <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                <h1 class="fw-bold text-primary m-0">ON<span class="text-secondary">Demand</span></h1>
+
+                    <p>Get all fish farming products Here! For a good fee</p>
+                   
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Mamprobi,Accra</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+2332028129432</p>
+                    <p><i class="fa fa-envelope me-3"></i>gifty.ofori-gyau@bov.gov.gh</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="../view/about.php">About Us</a>
+                    <a class="btn btn-link" href="../view/contact.php">Contact Us</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <p>Products available 24hours.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="Your email">
+                        <button type="button"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
                 </div>
             </div>
@@ -219,11 +211,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                        &copy; <a href="../index.php">Ondemand</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                        <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a> -->
                     </div>
                 </div>
             </div>

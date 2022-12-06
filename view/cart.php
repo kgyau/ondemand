@@ -30,8 +30,6 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="../css/bootsrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
     <link href="../lib/animate/animate.css" rel="stylesheet">
     <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
@@ -60,37 +58,59 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
 
 
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-        <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.9s">
-            <a href="../index.php" class="navbar-brand ms-4 ms-lg-0">
-                <h1 class="fw-bold text-primary m-0">F<span class="text-secondary">oo</span>dy</h1>
+   
+<!-- Navbar Start -->
+<div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+
+
+<nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+    <a href="../index.php" class="navbar-brand ms-4 ms-lg-0">
+        <h1 class="fw-bold text-primary m-0">ON<span class="text-secondary">Demand</span></h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="../index.php" class="nav-item nav-link active">Home</a>
+            <a href="../view/product.php" class="nav-item nav-link"> Products</a>
+            <a href="../view/contact.php" class="nav-item nav-link">Contact us</a>
+            <?php
+            // session_start();
+            if(isset($_SESSION['cid'])){
+        ?>
+        <a class="nav-item nav-link" style="align-self: right;" href="../login/logout.php">Logout</a>
+        <?php
+            }
+        ?>
+
+        </div>
+
+        <div class="d-none d-lg-flex ms-2">
+        <?php
+            if(isset($_SESSION['cid'])){
+        ?>
+        <a class="btn-sm-square bg-white rounded-circle ms-3" href="../view/product_search_result.php">
+                <small class="fa fa-search text-body"></small>
             </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="../index.php" class="nav-item nav-link">Home</a>
-                    <a href="product.php" class="nav-item nav-link active">Products</a>
-                    <a href="contact.php" class="nav-item nav-link">Contact Us</a>
-                </div>
-                <div class="d-none d-lg-flex ms-2">
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="product_search_result.php">
-                        <small class="fa fa-search text-body"></small>
-                    </a>
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
-                        <small class="fa fa-user text-body"></small>
-                    </a>
-                    <a class="btn-sm-square bg-white rounded-circle ms-3" href="cart.php">
-                        <small class="fa fa-shopping-bag text-body"></small>
-                    </a>
-                </div>
-            </div>
-        </nav>
+            <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
+                <small class="fa fa-user text-body"></small>
+            </a>
+            
+            <a class="btn-sm-square bg-white rounded-circle ms-3" href="../view/cart.php">
+                <small class="fa fa-shopping-bag text-body"></small>
+            </a>
+        <?php
+            }
+        ?>
+           
+        </div>
     </div>
-    <!-- Navbar End -->
+</nav>
+</div>
+<!-- Navbar End -->
+
 
 
     <!-- Page Header Start -->
@@ -99,7 +119,7 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
             <h1 class="display-3 mb-3 animated slideInDown">Cart</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a class="text-body" href="index.php">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-body" href="../index.php">Home</a></li>
                     <li class="breadcrumb-item text-dark active" aria-current="page">Cart</li>
                 </ol>
             </nav>
@@ -175,12 +195,6 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
                                                  <a href='../actions/manage_qty_cart.php?inc=$product_id' class='btn btn-primary'>+</a>
                                             </div>
                                         <!-- Quantity -->
-        
-                                        <!-- Price -->
-                                        <div>
-                                           Price:  GHS $product_price
-                                        </div>
-                                        <!-- Price -->
                                     </div>
                                     </div>
                                     <!-- Single item -->
@@ -226,12 +240,6 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
                                              <a href='../actions/manage_qty_cart.php?inc=$product_id' class='btn btn-primary'>+</a>
                                         </div>
                                     <!-- Quantity -->
-    
-                                    <!-- Price -->
-                                    <div>
-                                       Price:  GHS $product_price
-                                    </div>
-                                    <!-- Price -->
                                 </div>
                                 </div>
                                 <!-- Single item -->
@@ -281,12 +289,12 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
                             <ul class='list-group list-group-flush'>
                                 <li
                                     class='list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0'>
-                                    Products
+                                    Product
                                     <span>$product_title</span>
                                 </li>
                                 <li class='list-group-item d-flex justify-content-between align-items-center px-0'>
-                                    Shipping
-                                    <span>Gratis</span>
+                                    Pick-up
+                                    <span>Head Office</span>
                                 </li>
                                 <li
                                     class='list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3'>
@@ -428,6 +436,8 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
 
     <!-- Template Javascript -->
     <script src="../js/main.js"></script>
+
+
 
 
 </body>

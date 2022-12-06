@@ -58,6 +58,12 @@ function editcat_ctr($catid,$newcatname){
     return $updateonecat->editcat_cls($catid,$newcatname);
 }
 
+function selectallprod_ctr(){
+    $select = new Brandclass();
+
+    return $select->viewallproducts_cls();
+}
+
 function viewallprod_ctr(){
     $viewallprod = new Brandclass();
     return $viewallprod->viewallprod_cls();
@@ -72,9 +78,9 @@ function viewoneprod_ctr($prodid){
     $viewoneprod = new Brandclass();
     return $viewoneprod->viewoneprod_cls($prodid);
 }
-function addproduct_ctr($prodcat,$prodbrand,$prodtitle,$prodprice,$proddesc,$prodimage,$prodkeywords){
+function addproduct_ctr($prodcat,$prodbrand,$prodtitle,$prodprice,$proddesc,$prodimage,$prodkeywords,$rental){
     $add_prod= new Brandclass();
-    return $add_prod->addproduct_cls($prodcat,$prodbrand,$prodtitle,$prodprice,$proddesc,$prodimage,$prodkeywords); 
+    return $add_prod->addproduct_cls($prodcat,$prodbrand,$prodtitle,$prodprice,$proddesc,$prodimage,$prodkeywords,$rental); 
 }
 
 function searchprod_ctr($search,$cat_id){
@@ -82,9 +88,9 @@ function searchprod_ctr($search,$cat_id){
     return $searchprod->searchprod_cls($search,$cat_id);
 }
 
-function editprod_ctr($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$productimage){
+function editprod_ctr($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$productimage,$rental){
     $updateprod = new Brandclass();
-    return $updateprod->editprod_cls($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$productimage);
+    return $updateprod->editprod_cls($prod_id,$productcat,$productbrand,$prod_title,$productprice,$prod_desc,$prod_key,$productimage,$rental);
 
 }
 function delete_product_ctr($id){
@@ -94,6 +100,17 @@ function delete_product_ctr($id){
     return $product_instance->delete_one_product_cls($id);
 
 }
+
+function viewallorders_ctr($customer_id){
+      // create an instance of the Product class
+      $product_instance = new BrandClass();
+      // call the method from the class
+      return $product_instance->viewallorders_cls($customer_id);
+  
+
+
+}
+
 
 
 // function editcat_ctr($catid,$newcatname){

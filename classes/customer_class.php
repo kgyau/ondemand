@@ -50,19 +50,40 @@ class CustomerClass extends db_connection{
 
     }
 
-    function editcus_cls($customer_id,$customer_name,$customer_email,$customer_country,$customer_city,$customer_contact){
-    $sql = "UPDATE `customer` SET customer_name = '$customer_name', customer_email= '$customer_email',customer_country= '$customer_country', 
+    function editcus_cls($customer_id,$customer_name,$customer_email,$customer_city,$customer_contact){
+    $sql = "UPDATE `customer` SET customer_name = '$customer_name', customer_email= '$customer_email', 
     customer_city= '$customer_city',customer_contact= '$customer_contact'
     WHERE customer_id = '$customer_id'";
-    return $this->db_query($sql);
+    return $this->db_query($sql);}
+
+    function viewall_orders($customer_id){
+        $sql="SELECT customer.customer_name, customer.customer_email,orders.invoice_no, orders.order_id, orders.order_date, orders.order_status, products.product_title,products.product_image, payment.amt FROM orders,customer,payment,products WHERE orders.customer_id=customer.customer_id and payment.pay_id=amt and customer.customer_id= '$customer_id' ";
+		return $this->db_fetch_all($sql);
+    
+    }
+
+
+    // public function view_orders($id)
+	// {
+	// 	$sql="SELECT customer.customer_name, customer.customer_email,orders.invoice_no, orders.order_id, orders.order_date, orders.order_status FROM orders,customer,orderdetails,payment,products WHERE orders.customer_id=customer.customer_id and  orders.order_id=orderdetails.order_id and rderdetails.product_id=products.product_id and orders.order_id='$oid';  ORDER BY orders.order_date DESC ";
+	// 	return $this->db_fetch_all($sql);
+	// }
+	// public function view_one_order($oid)
+	// {
+	// 	$sql="SELECT orderdetails.qty, orderdetails.product_id ,products.product_title, payment.amt, orders.order_id FROM orders,orderdetails,payment,products WHERE orders.order_id=orderdetails.order_id and orders.order_id=payment.order_id and orderdetails.product_id=products.product_id and orders.order_id='$oid'; ";
+	// 	return $this->db_fetch_all($sql);
+	// }
+
+
+
 
 }
 
+  
 
 
 
 
-}
 
 
 

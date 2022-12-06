@@ -15,6 +15,7 @@ if(isset($_POST['lsubmit'])){
   $pickedpassword= $check['customer_pass'];
 
   // echo $email, $password;
+  $_SESSION["success_message"] = "success";
 
 
   if($check){
@@ -45,3 +46,5 @@ if(isset($_POST['lsubmit'])){
 }
 
 ?>
+
+

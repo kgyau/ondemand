@@ -19,24 +19,37 @@ include('../controllers/customer_controller.php');
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="../css/admin.css">
-   
+   <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="../css/style.css" rel="stylesheet">
 
 </head>
 <body>
-    <header>
-		<!-- navbar -->
-		<!-- <div class="logo">
-			<img src="../img/about.jpg">
-		</div> -->
-		<div class="main">
-			<ul>
-				<li><a href="admin_product.php">Products</a></li>
-				<li><a href="admin_orders.php">Orders</a></li>
-				<li class="active"><a href="admin_users.php">Users</a></li>
-				<li><a href="../login/logout.php">Logout</a></li>
-			</ul>
-		</div>
-	</header>
+  <!-- Navbar Start -->
+ <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+        <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.9s">
+            <a href="../index.php" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="fw-bold text-primary m-0">ON<span class="text-secondary">Demand</span></h1>
+
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="admin_product.php" class="nav-item nav-link">Products</a>
+                    <a href="admin_orders.php" class="nav-item nav-link">Orders</a>
+                    <a href="admin_users.php" class="nav-item nav-link active">Users </a>
+                    <a href="../login/logout.php" class="nav-item nav-link">Logout</a>
+                </div>
+                
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
 <br>
 <br>
 <br>
@@ -94,94 +107,3 @@ include('../controllers/customer_controller.php');
 
 </body>
 </html>
-
-
-
-<div class="container-fluid px-4 py-5 mx-auto">
-        <div class="row d-flex justify-content-center">
-            <div class="col-xl-4 col-lg-8 col-md-9 col-11 text-center">
-                <form method="POST" action="../actions/add_product.php" enctype="multipart/form-data" >
-
-                    <div class="card">
-                        <div class="form-group">
-                            <label for="prodtitle"><b>Product Title</b></label>
-                            <input type="text" placeholder="Enter Product Name" name="prodtitle" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="brands">Choose Product Brand:</label>
-                            <select class="form-control" name="prodbrand">
-                                <option> Select Brand </option>
-                                <?php 
-                                $brand_list = selectallBrand_ctr();
-                                if ($brand_list) {
-
-                                    foreach ((array) $brand_list as $one_brand) {
-                                        $brand_id = $one_brand['brand_id'];
-                                        $brand_name = $one_brand['brand_name'];
-                                        echo "<option value='$brand_id' > $brand_name </option>";
-                                    }
-                                }else{
-                                    echo "<option value='no_found'>No Brand found</option>";
-                                }
-                                ?>
-                            </select>
-                        </div>
-                        <br><br>
-
-
-
-                        <div class="form-group">
-                            <label for="prods">Choose Product Category:</label>
-                            <select class="form-control" name="prodcat">
-                                <option> Select Category </option>
-                                <?php 
-                                    $category_list = selectallcat_ctr();
-                                    if ($category_list) {
-                                        foreach ((array) $category_list as $one_category) {
-                                            $cat_id = $one_category['cat_id'];
-                                            $cat_name = $one_category['cat_name'];
-                                            echo "<option value='$cat_id'>$cat_name</option>";
-                                        }
-                                    }else{
-                                        echo "<option value='no_found'>No Category found</option>";
-                                    }
-                                    ?>
-                            </select>
-                        </div>
-                        <br><br>
-
-                        <div class="form-group">
-                            <label for="prodprice"><b>Product Price (in Ghana Cedis)</b></label>
-                            <input type="text" placeholder="Enter Product Price (Ghana Cedi)" name="prodprice" required>
-                            <br><br>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="proddesc"><b>Product Description</b></label>
-                            <input type="text" placeholder="Enter Product Description" name="proddesc" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="prodkeywords"><b>Product keyword</b></label>
-                            <input type="text" placeholder="Enter Product keyword" name="prodkeywords" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="image" for="prodimage">Select Product Image:</label>
-                            <input type="file" class="form-control-file" name="prodimage" id="prodimage">
-                        </div>
-                        <div class="row justify-content-end">
-                            <div class="form-group col-sm-6">
-                                <button type="submit" value="Add new product" name="submitprod" class="btn btn-primary">Add Product</button>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <br><br>

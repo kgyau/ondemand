@@ -22,8 +22,13 @@ class Cart extends db_connection{
 
     //check for duplicate
     function duplicatecheck_cls($p_id,$c_id){
+		$error="";
         $sql = "SELECT * FROM cart WHERE `p_id`='$p_id'  AND `c_id`='$c_id'";
-        return $this-> db_fetch_all($sql); 
+        $result=$this-> db_fetch_all($sql);
+        if ($result) {
+            $this-> error ="Item already in cart";
+        }
+        return $this->error;
     }
 
      // one item  from cart
@@ -98,6 +103,7 @@ class Cart extends db_connection{
         return $this-> db_fetch_one($sql);
    }
 
+   
 
 }
 ?>

@@ -61,7 +61,7 @@
                 <br>
 
                 <div class="input-group">
-                    <button id="register_btn"type="submit" name="submit" class="btn btn-success">Sign Up</button>
+                    <button id="register_btn"type="submit" name="submit" onclick="validatename()" onclick="validatenum()"class="btn btn-success">Sign Up</button>
                     
 
                 </div>
@@ -71,71 +71,43 @@
     
 
     </div>
-    <script>
-    $('document').ready(function() {   
-    /* handle form validation */  
-    $("#register_form").validate({
-        rules:
-     {
-     fullname: {
-        required: true,
-     minlength: 7
-     },
-     password: {
-     required: true,
-     minlength: 6,
-     maxlength: 8
-     },
+
     
-     email: {
-              required: true,
-              email: true
-              },
-      },
-         messages:
-      {
-              user_name: "please enter fullname",
-              password:{
-                        required: "please provide a password",
-                        minlength: "password at least have 6 characters"
-                       },
-              user_email: "please enter a valid email address",
-     
-         },
-      submitHandler: submitForm 
-         });  
-      /* handle form submit */
-      function submitForm() {  
-      var data = $("#register_form").serialize();    
-      $.ajax({    
-      type : 'POST',
-      url  : '../actions/registerprocess.php',
-      data : data,
-      beforeSend: function() { 
-       $("#error").fadeOut();
-       $("#btn-submit").html('<span class="glyphicon glyphicon-transfer"></span>   sending ...');
-      },
-      success :  function(response) {      
-          if(response==1){         
-               $("#error").fadeIn(1000, function(){
-                 $("#error").html('<div class="alert alert-danger"> <span  class="glyphicon glyphicon-info-sign"></span>   Sorry email already taken !</div>');           
-                 $("#btn-submit").html('<span class="glyphicon glyphicon-log-in"></span>   Create Account');          
-               });                    
-          } else if(response=="registered"){         
-               $("#btn-submit").html('<img src="ajax-loader.gif" />   Signing Up ...');
-               setTimeout('$(".form-signin").fadeOut(500,  function(){ $(".register_container").load("../actions/login.php"); }); ',3000);         
-          } else {          
-               $("#error").fadeIn(1000, function(){           
-                    $("#error").html('<div class="alert alert-danger"><span  class="glyphicon glyphicon-info-sign"></span>   '+data+' !</div>');           
-                   $("#btn-submit").html('<span class="glyphicon glyphicon-log-in"></span>   Create Account');         
-               });           
-             }
-          }
-      });
-      return false;
+    <script>
+function validatename(){
+    var regName = /^[a-zA-Z]+$/;
+    var name = document.getElementById('fname').value;
+    if(!regName.test(name)){
+        alert('Please enter your full name (at least 10 characters).');
+        document.getElementById('fname').focus();
+        return false;
+    }else{
+        alert('Valid name given.');
+        return true;
     }
-  });
-  </script>
+}
+
+
+function validatenum()
+{
+  var phoneno = /^\d{10}$/;
+  var num = document.getElementById('cnumber').value;
+
+  if(!phoneno.value.match(num)) {
+    alert('Please enter a 10 digit number).');
+    document.getElementById('cnumber').focus();
+    return false;
+ }
+    else{
+        alert("Valid Number");
+        return true;
+        }
+}
+
+</script>
+
+
+
 
 </body>
 

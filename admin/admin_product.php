@@ -14,23 +14,76 @@ include('../controllers/product_controller.php');
     <title>admin page</title>
 
     <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="../css/product.css" rel="stylesheet">
+ 
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
 
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Lora:wght@600;700&display=swap"
+    rel="stylesheet">
 
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="../lib/animate/animate.css" rel="stylesheet">
+<link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="../css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
+
+ 
+   <!-- Navbar Start -->
+   <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+        <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.9s">
+            <a href="../index.php" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="fw-bold text-primary m-0">ON<span class="text-secondary">Demand</span></h1>
+
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="admin_product.php" class="nav-item nav-link active">Products</a>
+                    <a href="admin_orders.php" class="nav-item nav-link">Orders</a>
+                    <a href="admin_users.php" class="nav-item nav-link ">Users </a>
+                    <a href="../login/logout.php" class="nav-item nav-link">Logout</a>
+                </div>
+               
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <!-- Navbar End -->
+<!-- 
     <header>
-        <!-- navbar -->
-        <!-- <div class="logo">
-            <img src="../images/logo_black.svg">
-        </div> -->
+       
         <div class="main">
             <ul>
 				<li class="active"><a href="admin_product.php">Products</a></li>
@@ -40,7 +93,7 @@ include('../controllers/product_controller.php');
 			</ul>
             </ul>
         </div>
-    </header>
+    </header> -->
 
     <div class="container">
      <form method="POST" action="../actions/add_product.php" enctype="multipart/form-data" >
@@ -90,6 +143,11 @@ include('../controllers/product_controller.php');
 				<textarea class="form-control" placeholder="Enter Product Keywords" name="prodkeywords"></textarea>
 			</div>
 
+            <div class="form-group">
+            <input type="radio" name="rental" value="Rental">Rental <br>
+            <input type="radio" name="rental" value="Non-Rental">Non-rental
+            </div>
+
 			<div class="form-group">
 				<input type="file" id="image" name="prodimage" accept="image/*">
 			</div>
@@ -99,6 +157,8 @@ include('../controllers/product_controller.php');
 	</div>
 	<br>
 	<br>		
+
+
 
 
     <!-- displaying product table -->
@@ -123,7 +183,7 @@ include('../controllers/product_controller.php');
 
             <tbody>
                 <?php
-                $product = viewallprod_ctr();
+                $product = selectallprod_ctr();
                 foreach ((array) $product as $aproduct) {
                     
                     $product_title = $aproduct['product_title'];

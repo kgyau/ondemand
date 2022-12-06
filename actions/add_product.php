@@ -16,8 +16,10 @@ if(isset($_POST['submitprod'])){
     $prodprice =$_POST['prodprice'];
     $proddesc =$_POST['proddesc'];
     $prodkeywords=$_POST['prodkeywords'];
+    $rental=$_POST['rental'];
     $prodimage =$_FILES['prodimage']['name'];
-    $targetdir= "../images/product/";
+    
+    $targetdir= "../images/products/";
     $image = $targetdir . $prodimage;
     $file = '../images/products/' .basename($_FILES["prodimage"]["name"]);
     move_uploaded_file($_FILES["prodimage"]["tmp_name"],$file);
@@ -26,10 +28,10 @@ if(isset($_POST['submitprod'])){
 
 //    echo "<img src='$file'>";
     
-//    echo $prodcat,$prodtitle,$prodprice,$prodbrand,$proddesc,$prodimage,$prodkeywords; 
+//    echo $prodcat,$prodtitle,$prodprice,$prodbrand,$proddesc,$prodimage,$prodkeywords,$rental; 
 
 
-  $result = addproduct_ctr($prodcat,$prodbrand,$prodtitle,$prodprice,$proddesc,$file,$prodkeywords);
+  $result = addproduct_ctr($prodcat,$prodbrand,$prodtitle,$prodprice,$proddesc,$file,$prodkeywords,$rental);
 
     if ($result) {
 
@@ -39,10 +41,10 @@ if(isset($_POST['submitprod'])){
         }else {
             echo "fail";
         }
-        header("location:../admin/product.php");
+        header("location:../admin/admin_product.php");
 
     } else{
-         header("location:../admin/product.php");
+         header("location:../admin/admin_product.php");
     }
 
 }

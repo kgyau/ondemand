@@ -46,10 +46,15 @@ function addCustomer_ctr($fullname,$email,$password,$city,$contactnumber,$userro
         return $selectonecustomer->viewonecustomer_cls($customer_id);
     }
 
-    function editcustomer_ctr($customer_id,$customer_name,$customer_email,$customer_country,$customer_city,$customer_contact){
+    function editcustomer_ctr($customer_id,$customer_name,$customer_email,$customer_city,$customer_contact){
         $selectonecustomer = new CustomerClass();
-        return $selectonecustomer->editcus_cls($customer_id,$customer_name,$customer_email,$customer_country,$customer_city,$customer_contact);
+        return $selectonecustomer->editcus_cls($customer_id,$customer_name,$customer_email,$customer_city,$customer_contact);
     }
 
+    function viewall_orders_ctr($customer_id){
+        $select_cat = new  CustomerClass();
+        return $select_cat->viewall_orders($customer_id);
+    }
 
+    
 ?>
