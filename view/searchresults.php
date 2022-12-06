@@ -137,7 +137,7 @@ $cat_id = $_POST['cat_id'];
                                 </div>";}?>
 
                 <div class="col-12 text-center">
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="../view/product.php">Browse More Products</a>
+                    <button class="btn btn-primary rounded-pill py-3 px-5" style="color:green;" href="../view/product.php">Browse More Products</button>
                 </div>
 
     <!-- Footer Start -->

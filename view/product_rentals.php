@@ -154,7 +154,7 @@ include("../controllers/product_controller.php");
 
                                 <div class='product-item'>
                                 <div class='position-relative bg-light overflow-hidden'>
-                                <img class='img-fluid w-100' src='../images/products/$product_image'  style='height: 300px ; ' >
+                                <img class='img-fluid w-100' src='../images/$product_image'  style='height: 300px ; ' >
                                 <div class='bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3'>New</div>
                                 </div>							
                                 <div class='text-center p-4'>
