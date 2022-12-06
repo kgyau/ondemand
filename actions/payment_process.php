@@ -54,6 +54,9 @@
   $order_id=$order_id['order_id'];
   $currency= 'GHS';
   $payment= payment_ctr($amt,$customer_id,$order_id,$currency,$payment_date);
+
+
+  
     
   // echo"<br>amount$amt,cus$customer_id,ord$order_id,curr$currency,pay$payment_date";
 
