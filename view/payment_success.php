@@ -130,8 +130,7 @@ $orders=viewallorders_ctr($c_id);
 
 
                             <?php
-                                        if($orders==true){
-
+                            if($orders==true){
                             foreach ( $orders as $anorder) {
                             $orderid= $anorder['order_id'];
                             $invoice = $anorder['invoice_no'];
@@ -166,11 +165,6 @@ $orders=viewallorders_ctr($c_id);
                                             class="col-md-2 text-center d-flex justify-content-center align-items-center">
                                             <p class="text-muted mb-0"><?php echo $product_title ?> </p>
                                         </div>
-                                        <div
-                                            class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                            <p class="text-muted mb-0 small">White</p>
-                                        </div>
-
                                         <div
                                             class="col-md-2 text-center d-flex justify-content-center align-items-center">
                                             <p class="text-muted mb-0 small">Price: <?php echo $amt ?></p>
