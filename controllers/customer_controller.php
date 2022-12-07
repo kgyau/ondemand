@@ -52,8 +52,8 @@ function addCustomer_ctr($fullname,$email,$password,$city,$contactnumber,$userro
     }
 
     function viewall_orders_ctr($customer_id){
-        $select_cat = new  CustomerClass();
-        return $select_cat->viewall_orders($customer_id);
+        $order = new  CustomerClass();
+        return $order->viewall_orders($customer_id);
     }
 
     
