@@ -138,12 +138,12 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <h1 class="display-5 mb-4">Reliable and Efficient</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                    <p class="mb-4">As a start-up Delivery is currewntly not a option.
+                        Pass by our office to pick up purchased products.
                     </p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Aliqu diam amet diam et eos</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Clita duo justo magna dolore erat amet</p>
+                    <p><i class="fa fa-check text-primary me-3"></i> Rented a product</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Each rented product is valid for 5 days</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Payment validates purchase</p>
                     <!-- <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a> -->
                 </div>
             </div>
