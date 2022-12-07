@@ -10,7 +10,7 @@
   // $amt=select_one_price_ctr($amt);
   $qty =$_GET['p_qty'];
   $c_id =get_id();
- $prod_id=$_GET['prod_id'];
+ $p_id=$_GET['prod_id'];
 
 
   $cartitems = viewcart_ctr($c_id);
@@ -59,7 +59,7 @@
     
   // echo"<br>amount$amt,cus$customer_id,ord$order_id,curr$currency,pay$payment_date";
 
-  $delete = removefromcart_ctr($c_id);
+  $delete = removefromcart_ctr($p_id,$c_id);
 
 
 

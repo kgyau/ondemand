@@ -118,7 +118,7 @@ $orders=viewallorders_ctr($c_id);
                             foreach ( $orders as $anorder) { 
                             $customer_name = $anorder['customer_name'];
                             }}
-                            ?> is ready <?php echo $anorder['customer_name']; ?></span> is ready !</h5>
+                            ?> <?php echo $anorder['customer_name']; ?></span> is ready !</h5>
                         </div>
 
 

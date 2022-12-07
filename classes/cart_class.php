@@ -10,8 +10,8 @@ class Cart extends db_connection{
 		return $this-> db_query($sql);
     }
 
-    function removefromcart_cls($c_id){
-        $sql="DELETE FROM cart WHERE `c_id`='$c_id'";
+    function removefromcart_cls($p_id,$c_id){
+        $sql="DELETE FROM cart WHERE `p_id`='$p_id' AND `c_id`='$c_id'";
 		return $this-> db_query($sql);
     }
   

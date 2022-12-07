@@ -34,9 +34,9 @@ include("../classes/cart_class.php");
     //     return $qty->cartqty_cls();
     // }
 
-    function removefromcart_ctr($c_id){
+    function removefromcart_ctr($p_id,$c_id){
         $remove= new Cart();
-        return $remove->removefromcart_cls($c_id);
+        return $remove->removefromcart_cls($p_id,$c_id);
     }
 
     function  duplicatecheck_ctr($p_id,$c_id){
