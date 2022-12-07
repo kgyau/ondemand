@@ -177,7 +177,7 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
                                         <p><strong>Price:  GHS $product_price</strong></p>
                                         <p><strong>Quantity: $product_qty</strong></p>
                                       
-						                <a href='../actions/deletefromcart.php?deletecart={$cartitems['product_id']}' class='btn btn-primary'>Remove</a>
+						                <a href='../actions/deletefromcart.php?deletecart={$oneitem['product_id']}' class='btn btn-primary'>Remove</a>
 						               
         
                                         <!-- Data -->
@@ -222,7 +222,7 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
                                     <p><strong>Price:  GHS $product_price</strong></p>
                                     <p><strong>Quantity: $product_qty</strong></p>
                                   
-                                    <a href='../actions/deletefromcart.php?deletecart={$cartitems['product_id']}' class='btn btn-primary'>Remove</a>
+                                    <a href='../actions/deletefromcart.php?deletecart={$oneitem['product_id']}' class='btn btn-primary'>Remove</a>
                                    
     
                                     <!-- Data -->
