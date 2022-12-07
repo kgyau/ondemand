@@ -59,7 +59,7 @@
     
   // echo"<br>amount$amt,cus$customer_id,ord$order_id,curr$currency,pay$payment_date";
 
-  $delete = delete_all_from_cart_ctr($p_id,$c_id);
+  $delete = delete_all_from_cart_ctr($c_id);
 
 
 
