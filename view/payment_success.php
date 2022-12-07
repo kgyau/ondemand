@@ -112,13 +112,13 @@ $orders=viewallorders_ctr($c_id);
                         <div class="card-header px-4 py-5">
                             <!-- <a href='../view/shop.php' class='btn btn-secondary' class='right' >continue shopping</a> <br> -->
 
-                            <h5 class="text-muted mb-0">Order for <span style="color: #a8729a;"> <?php
+                            <h5 class="text-muted mb-0">Order for  <span style="color: #a8729a;"> <?php
                         if($orders==true){
 
                             foreach ( $orders as $anorder) { 
                             $customer_name = $anorder['customer_name'];
                             }}
-                            ?> <?php echo $anorder['customer_name']; ?></span>!</h5>
+                            ?> is ready <?php echo $anorder['customer_name']; ?></span> is ready !</h5>
                         </div>
 
 
@@ -194,7 +194,8 @@ $orders=viewallorders_ctr($c_id);
                                 }
                                                             
                                 ?>
-
+                                <a href='../view/product.php'
+                                class='btn btn-outline-primary border-2 py-2 px-4 rounded-pill'>continue shopping</a>
                         </div>
                     </div>
                 </div>

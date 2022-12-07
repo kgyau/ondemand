@@ -21,7 +21,7 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
 <html lang="en">
 
 <head>
-    <title>Payment</title>
+    <title> OnDemand Payment</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
