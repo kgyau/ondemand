@@ -2,6 +2,8 @@
 require('../controllers/customer_controller.php');
 $customer_id = $_GET['customer_id'];
 $orders=viewall_orders_ctr($customer_id);
+// echo $orders;
+print_r($orders);
 
 ?>
 
