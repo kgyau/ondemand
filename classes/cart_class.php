@@ -23,7 +23,7 @@ class Cart extends db_connection{
 
     function delete_all_from_cart_cls($c_id){
 		// return true or false
-        $sql= "DELETE from cart WHERE `c_id` ='$c_id'";
+        $sql= "DELETE from `cart` WHERE `c_id` ='$c_id'";
         return $this->db_query($sql);
        
 	}
