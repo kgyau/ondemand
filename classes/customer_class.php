@@ -57,7 +57,7 @@ class CustomerClass extends db_connection{
     return $this->db_query($sql);}
 
     function viewall_orders($customer_id){
-        $sql="SELECT customer.customer_name, customer.customer_email,orders.invoice_no, orders.order_id, orders.order_date, orders.order_status, products.product_title,products.product_image, payment.amt FROM orders,customer,payment,products WHERE orders.customer_id=customer.customer_id and payment.pay_id=amt and customer.customer_id= '$customer_id' ";
+        $sql="SELECT `customer.customer_name`, `customer.customer_email`,`orders.invoice_no`, `orders.order_id`, `orders.order_date`, `orders.order_status`, `products.product_title`,`products.product_image`, `payment.amt` FROM `orders`,`customer`,`payment`,`products` WHERE `orders.customer_id`=customer.customer_id and `payment.pay_id`=amt and `customer.customer_id`= '$customer_id' ";
 		return $this->db_fetch_all($sql);
     
     }
