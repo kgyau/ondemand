@@ -32,7 +32,9 @@
   curl_setopt($ch,CURLOPT_URL, $url);
   curl_setopt($ch,CURLOPT_POST, true);
   curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: Bearer sk_test_3cad4886be207b2ea11d086f457a79e9fffa3547","Cache-Control: no-cache",));
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization: Bearer sk_live_497a3a223893acf3ff8ecfd4dce1158b2fc9b088","Cache-Control: no-cache",));
+  // sk_live_497a3a223893acf3ff8ecfd4dce1158b2fc9b088
+  // sk_test_3cad4886be207b2ea11d086f457a79e9fffa3547
   //So that curl_exec returns the contents of the cURL; rather than echoing it
   curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
   //execute post

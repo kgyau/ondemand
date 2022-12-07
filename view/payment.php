@@ -249,7 +249,8 @@ $grandtotal1=$grandtotal['SUM(products.product_price*cart.qty)'];
     event.preventDefault();
 
     let handler = PaystackPop.setup({
-        key: 'pk_test_0ecfee73d182a155d2d4c95e059fc6ab143a5554', // Replace with your public key
+        // pk_test_0ecfee73d182a155d2d4c95e059fc6ab143a5554 
+         key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', // Replace with your public key
         email: document.getElementById("email").value,
         amount: document.getElementById("amt").value * 100,
         ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
