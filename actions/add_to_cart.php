@@ -24,7 +24,7 @@ $_SESSION["alreadycart"] = "error";
       ;
 
      } else {
-   $result= addtocart_ctr($p_id,$ip_add,$c_id,$qty);
+   $result= addtocart_ctr($p_id,$c_id,$qty);
        if($result){
          header("location:../view/cart.php");
        }else {

@@ -11,11 +11,11 @@ include("../classes/cart_class.php");
 
 
 
-    function addtocart_ctr($p_id,$ip_add,$c_id,$qty){
+    function addtocart_ctr($p_id,$c_id,$qty){
         //create an instance of the class means that in this fucntion now i can run all the cls methods in the contact_class file
         // instance is add_item then new and the naem of the class in the contact_class file 
         $add_item= new Cart();
-        return $add_item->addtocart_cls($p_id,$ip_add,$c_id,$qty);
+        return $add_item->addtocart_cls($p_id,$c_id,$qty);
     }
 
     function delete_all_from_cart_ctr($c_id){

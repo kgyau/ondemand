@@ -5,8 +5,8 @@ require("../settings/db_class.php");
 
 class Cart extends db_connection{
 
-    function addtocart_cls($p_id,$ip_add,$c_id,$qty){
-        $sql = "INSERT INTO `cart` (p_id,ip_add,c_id,qty) VALUES ('$p_id','$ip_add','$c_id','$qty')";
+    function addtocart_cls($p_id,$c_id,$qty){
+        $sql = "INSERT INTO `cart` (p_id,c_id,qty) VALUES ('$p_id','$c_id','$qty')";
 		return $this-> db_query($sql);
     }
 
