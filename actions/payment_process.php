@@ -74,45 +74,10 @@
     $i++;
   }
     
-
-
-
-  
   $_SESSION["success_message"] = "success";
 
 
-  // header('location: ../view/payment_success.php');
 } 
-// $payment= payment_ctr($amt,$customer_id,$order_id,$currency,$payment_date);
-
-// if ($payment) {
-//   // if payment is successful remove the customers products from the cart
- 
-// }
-
-
-//  // check if insertion was successful
-//  if ($delete) {
-//   header('location: ../view/payment_success.php');
-// } else {
-//   header('Location: ../views/failure.html');
-
-// }
-
-
-
-
-// session variuable check if it equal to success if so do the js
-// <!-- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-//       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-//       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-// <script>
-  
-
-//   document.location.href="../view/payment_success.php";
-  
-// </script>
-//  -->
 
 ?>
 
