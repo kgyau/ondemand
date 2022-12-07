@@ -68,7 +68,7 @@ $orders=viewallorders_ctr($c_id);
             // session_start();
             if(isset($_SESSION['cid'])){
         ?>
-                    <a class="nav-item nav-link" style="align-self: right;" href="login/logout.php">Logout</a>
+                    <a class="nav-item nav-link" style="align-self: right;" href="../login/logout.php">Logout</a>
                     <?php
             }
         ?>
